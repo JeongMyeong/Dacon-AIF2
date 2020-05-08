@@ -47,7 +47,7 @@
 - optimizer 에서 polynomial 방식, cosine방식 그리고 warm up 을적용시켜 보기.
 - 40x40xN 으로 학습한 결과와 0.1이상의 값들만 학습시킬때 앙상블 효과가 좋음.
 - 40x40xN 으로 학습시킬 때 훈련셋에 0.1이상인 픽셀이 100개 이상인것을 90도 돌린 것으로 데이터를 증량시켰을 때 좋은 결과를 보임.
-- polynomial Decay
+- [polynomial Decay](https://github.com/tensorflow/tensorflow/blob/v2.2.0/tensorflow/python/keras/optimizer_v2/learning_rate_schedule.py#L267-L406)
     - step = min(step, decay_steps)
     - ((initial_learning_rate - end_learning_rate) *
               (1 - step / decay_steps) ^ (power)
@@ -59,10 +59,14 @@
 batch_size=256
 epochs=100
 decay_st = (len(train)//batch_size+1)*epochs
-tf.keras.optimizers.schedules.PolynomialDecay(
-    initial_learning_rate, decay_steps, end_learning_rate=0.0001, power=1.0,
-    cycle=False, name=None
-)
+
+poly_sche = tf.keras.optimizers.schedules.PolynomialDecay( 0.001, decay_st, end_learning_rate=1e-6, power=0.9)
+opt = tf.keras.optimizers.Adam(poly_sche)
+
+
+#tf.keras.optimizers.schedules.PolynomialDecay(
+#    initial_learning_rate, decay_steps, end_learning_rate=0.0001, power=1.0,
+#    cycle=False, name=None)
 
 
 ```
