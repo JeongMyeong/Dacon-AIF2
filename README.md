@@ -87,3 +87,5 @@ tf.keras.experimental.CosineDecayRestarts(
     name=None
 )
 ```
+
+- rotation 할 때 90도 와 180도 돌린것의 차이 ...? 돌린것 없이 학습했을 때 돌린걸 예측 하게 되면 0.1 이상의 값 분포가 다르다...
