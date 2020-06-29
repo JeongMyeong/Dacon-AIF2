@@ -78,8 +78,8 @@ opt = tf.keras.optimizers.Adam(poly_sche)
 - CosineDecay with restarts
     - https://techburst.io/improving-the-way-we-work-with-learning-rate-5e99554f163b
     - first_decay_steps : 몇 iteration 마다 restarts를 할 것인지
-    - t_mul : 예를들어 1000번의 iteration 마다 restarts를 한다면 ```t_mul``` 이 2이면 다음 restarts는 1000+1000x2에서, 그 다음 restarts는 1000+1000x2 + 1000x2x2 1000, 3000, 7000에서 restarts가 일어난다.
-    - m_mul : restarts가 발생할 때 ```init_lerarning_rate``` 에 곱해주는 값 예를들어 ```init_lr```이 0.1이고 ```m_mul```이 0.5이면 두 번째 restarts를 시작할 때 ```learning_rate```는 0.05 부터 시작한다.
+    - t_mul : 예를들어 1000번의 iteration 마다 restarts를 한다면 ```t_mul``` 이 2이면 다음 restarts는 1000+1000x2에서, 그 다음 restarts는 1000+1000x2 + 1000x2x2 즉, 1000, 3000, 7000에서 restarts가 일어난다.
+    - m_mul : restarts가 발생할 때 ```init_lerarning_rate``` 에 곱해주는 값 예를들어 ```init_lr```이 0.1이고 ```m_mul```이 0.5이면 두 번째 restarts를 시작할 때 ```learning_rate```는 ```init_learning_rate * m_mul```인 0.05 부터 시작한다.
     
 ```
 tf.keras.experimental.CosineDecayRestarts(
