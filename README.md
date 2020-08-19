@@ -72,7 +72,7 @@ opt = tf.keras.optimizers.Adam(poly_sche)
 ```
 
 - [Dacon 대회 취지](https://dacon.io/notice/notice/13)
-    - 0.099999 로 제출을 수정하는것은 dacon 대회 취지에 어긋난 것을 확인하고 모델 output을 그대로 제출하기로 함.
+    - ~0.099999 로 제출을 수정하는것은 dacon 대회 취지에 어긋난 것을 확인하고 모델 output을 그대로 제출하기로 함.~ 문의 결과 상관없음.
     - 1.4414988418(0.099999로 값고정) --> 1.4612163839 (모델 output 그대로)
     
 - CosineDecay with restarts
@@ -89,3 +89,5 @@ tf.keras.experimental.CosineDecayRestarts(
 ```
 
 - rotation 할 때 90도 와 180도 돌린것의 차이 ...? 돌린것 없이 학습했을 때 돌린걸 예측 하게 되면 0.1 이상의 값 분포가 다르다...
+
+- 정리는 시간날 때... 대회 최종 2위 수상.
