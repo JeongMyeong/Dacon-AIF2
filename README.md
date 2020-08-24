@@ -70,10 +70,6 @@ opt = tf.keras.optimizers.Adam(poly_sche)
 
 
 ```
-
-- [Dacon 대회 취지](https://dacon.io/notice/notice/13)
-    - ~0.099999 로 제출을 수정하는것은 dacon 대회 취지에 어긋난 것을 확인하고 모델 output을 그대로 제출하기로 함.~ 문의 결과 상관없음.
-    - 1.4414988418(0.099999로 값고정) --> 1.4612163839 (모델 output 그대로)
     
 - CosineDecay with restarts
     - https://techburst.io/improving-the-way-we-work-with-learning-rate-5e99554f163b
